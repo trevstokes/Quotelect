@@ -1,1 +1,11 @@
+/* Quotelect Custom CSS */
+
+/* Align thumbnail in center, couldn't get bootstrap to do it */
 div.thumbnail {text-align:center;} 
+
+/* Decrease wasted space when using a pager in a well */
+ul.pager-in-well {margin:0cm 0cm 0cm 0cm;}
+
+/* Default font settings for Quotelect brand name */
+/* Will likely be temporary until a logo is designed */
+.brand-head {color:#1F7A1F; font-weight:600; font-size:110%;}
