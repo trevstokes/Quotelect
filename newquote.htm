@@ -8,6 +8,8 @@
 		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<link href="css/bootstrap-responsive.css" rel="stylesheet">
 		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="css/bootstrap-datepicker.css" rel="stylesheet">
+		<link href="css/bootstrap-timepicker.css" rel="stylesheet">
 		<!-- Quotelect -->
 		<link href="qcss/quotelect.css" rel="stylesheet" type="text/css">
 	</head>
@@ -15,6 +17,8 @@
 	<body>
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap-datepicker.js"></script>
+		<script src="js/bootstrap-timepicker.js"></script>
 		
 		<div class="row-fluid">
 			<div class="span12">
@@ -45,77 +49,67 @@
 				</div>
 			</div>
 		</div>
-
-		<div class="row-fluid">
-			<div class="span12">
-				<h1>Submit a New Quote</h1>			
+		<div class="container">
+			<div class="row-fluid">
+				<div class="span12">
+					<h1>Submit a New Quote</h1>			
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span1">
+					<!-- This span only exists for adding possible graphic step numbers to the left of each user step defined below. -->
+				</div>
+				<div class="span6">
+					<form>
+						<fieldset>
+							<!-- User step 1 -->
+							<label>What was said?</label>
+							<textarea rows="5"></textarea><span class="help-inline">* Don't paraphrase</span>
+							<br>
+							<!-- User step 2 -->
+							<label>Who said it?</label>
+							<input type="text"><span class="help-inline">* Try really hard to find the correct person!</span>
+							<label class="checkbox">
+								<input type="checkbox" value="username"> I said it! 
+							</label>
+							<br>
+							<!-- User step 3 -->
+							<label>In what context was this said?</label>
+							<textarea rows="5"></textarea><span class="help-inline">* How does this make sense?</span>
+							<span class="help-block"><a href="#" target="_blank">Example of what context means</a></span>
+							<br>
+							<!-- User step 4 -->
+							<label>When?</label> 
+<div class="input-append date datepicker">
+    <input type="text" class="input-small" placeholder="MM/DD/YYYY"><span class="add-on"><i class="icon-th"></i></span>
+</div>
+							<br>
+        <div class="input-append bootstrap-timepicker">
+            <input id="whenTime" type="text" class="input-small" placeholder="HH:MM:SS">
+            <span class="add-on"><i class="icon-time"></i></span>
+        </div>
+							<br>
+							<!-- User step 5 -->
+							<label>Where?</label>
+							<input type="text" placeholder="City, State, Building, etc.">
+							<br>
+							<br>
+							<!-- The all-important submit button -->
+							<button type="submit" class="btn btn-large btn-primary">Submit Quote!</button>
+						</fieldset>
+					</form>
+				</div>
+				<div class="span5">
+					<!-- This span only exists so that checkboxes and hyperlinks cannot be selected from the far right of the web page. This span limits their clickable range. -->
+				</div>
 			</div>
 		</div>
-		<div class="row-fluid">
-			<div class="span1">
-				<!-- This span only exists for adding possible graphic step numbers to the left of each user step defined below. -->
-			</div>
-			<div class="span6">
-				<form>
-					<fieldset>
-						<!-- User step 1 -->
-						<label>What was said?</label>
-						<textarea rows="5"></textarea><span class="help-inline">* Don't paraphrase</span>
-						<br>
-						<!-- User step 2 -->
-						<label>Who said it?</label>
-						<input type="text"><span class="help-inline">* Try really hard to find the correct person!</span>
-						<label class="checkbox">
-							<input type="checkbox" value="username"> I said it! 
-						</label>
-						<br>
-						<!-- User step 3 -->
-						<label>In what context was this said?</label>
-						<textarea rows="5"></textarea><span class="help-inline">* How does this make sense?</span>
-						<span class="help-block"><a href="#" target="_blank">Example of what context means</a></span>
-						<br>
-						<!-- User step 4 -->
-						<label>When?</label>
-						<div class="input-append">
-							<input type="text" class="input-small" id="appendedDropdownButton" placeholder="MM/DD/YYYY">
-							<div class="btn-group">
-								<button class="btn dropdown-toggle" data-toggle="dropdown">
-									Date Select
-									<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a href="#">Date picker should be here! :-O</a></li>
-								</ul>
-							</div>
-						</div>
-						<br>
-						<div class="input-append">
-							<input type="text" class="input-small" id="appendedDropdownButton" placeholder="HH:MM:SS">
-							<div class="btn-group">
-								<button class="btn dropdown-toggle" data-toggle="dropdown">
-									Time Select
-									<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a href="#">Time picker should be here! :-O</a></li>
-								</ul>
-							</div>
-						</div>
-						<br>
-						<!-- User step 5 -->
-						<label>Where?</label>
-						<input type="text" placeholder="City, State, Building, etc.">
-						<br>
-						<br>
-						<!-- The all-important submit button -->
-						<button type="submit" class="btn btn-large btn-primary">Submit Quote!</button>
-					</fieldset>
-				</form>
-			</div>
-			<div class="span5">
-				<!-- This span only exists so that checkboxes and hyperlinks cannot be selected from the far right of the web page. This span limits their clickable range. -->
-			</div>
-		</div>
+		<script>
+		$('.datepicker').datepicker({
+    format: 'mm-dd-yyyy'
+});
+$('#whenTime').timepicker();
+		</script>
 	</body>
 	
 </html>

@@ -9,3 +9,8 @@ ul.pager-in-well {margin:0cm 0cm 0cm 0cm;}
 /* Default font settings for Quotelect brand name */
 /* Will likely be temporary until a logo is designed */
 .brand-head {color:#1F7A1F; font-weight:600; font-size:110%;}
+
+/* Shrinking search box so it doesn't jack things up at small sizes */
+@media (max-width: 480px) {
+.search-query {width:75px;}
+}
